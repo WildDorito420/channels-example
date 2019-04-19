@@ -13,7 +13,6 @@ DEBUG = os.environ.get("DEBUG", False)
 INSTALLED_APPS = [
     'channels',
     'chat',
-    'roadassist.apps.RoadassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
