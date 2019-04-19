@@ -1,2 +1,2 @@
-web: daphne chat.asgi:channel_layer --port $PORT --bind 0.0.0.0
+web: daphne -p $PORT chat.asgi:application
 worker: python manage.py runserver
