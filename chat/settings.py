@@ -10,27 +10,28 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "".join(random.choice(string.printable
 DEBUG = os.environ.get("DEBUG", False)
 
 # Application definition
-INSTALLED_APPS = (
+INSTALLED_APPS = [
+    'channels',
+    'chat',
+    'roadassist.apps.RoadassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels',
-    'chat',
-)
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-)
+]
+
 
 ROOT_URLCONF = 'chat.urls'
 
