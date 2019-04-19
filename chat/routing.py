@@ -1,6 +1,8 @@
 from channels.staticfiles import StaticFilesConsumer
 from . import consumers
 
+ASGI_APPLICATION = "chat.routing.application"
+
 channel_routing = {
     # This makes Django serve static files from settings.STATIC_URL, similar
     # to django.views.static.serve. This isn't ideal (not exactly production
